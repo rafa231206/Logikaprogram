@@ -55,7 +55,6 @@ p {
     font-family: 'Poppins', sans-serif; /* Keep Poppins for general text */
     font-size: 1em;
     max-width: 700px;
-    margin: 0.625rem auto;
     line-height: 1.6;
 }
 
@@ -347,4 +346,11 @@ code {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--hover-color-dark);
+}
+table{
+    border: 1px solid ;
+    border-collapse: collapse; 
+}
+th, td {
+    padding: 10px; 
 }
