@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logika Pemrograman - Materi Lengkap</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Menggunakan font monospace yang populer untuk pemrograman -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="main-title"><i class="fas fa-code"></i> Logika Pemrograman</h1>
+            <p class="tagline">Panduan lengkap untuk memahami dasar-dasar logika pemrograman.</p>
+            <div class="header-decoration"></div>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <h2 class="section-title">Daftar Isi</h2>
+        <div class="accordion-wrapper">
+
+            <!-- Bagian 1: Algoritma -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-cogs icon-prefix"></i>Algoritma <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu Algoritma? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Algoritma adalah serangkaian langkah-langkah logis dan terstruktur untuk menyelesaikan suatu masalah.</li>
+                                <li>Dalam pemrograman, algoritma adalah "resep" yang memberitahu komputer apa yang harus dilakukan.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Sejarah Algoritma <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Istilah “algoritma” berasal dari nama matematikawan Persia, Muhammad Ibnu Musa Al-Khwarizmi (sekitar 780–850 M).</li>
+                                <li>Karyanya menjadi dasar bagi pengembangan aljabar dan konsep algoritma dalam komputasi modern.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Analogi Algoritma <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Ada masalah →</li>
+                                <li>Buat algoritma (langkah-langkah solusi) →</li>
+                                <li>Ubah algoritma jadi program komputer</li>
+                                <li>Maka tercipta solusi nyata</li>
+                            </ul>
+                            <p class="note">Algoritma dibuat untuk menyelesaikan masalah, bukan menciptakan masalah baru.</p>
+                            <details class="sub-accordion">
+                                <summary class="accordion-summary">Contoh Analogi<i class="fas fa-angle-right arrow"></i></summary>
+                                <div class="content sub-accordion-content">
+                                    <p>Bayangkan algoritma seperti resep masakan:</p>
+                                    <ul>
+                                        <li>**Masalah:** Lapar, ingin makan nasi goreng.</li>
+                                        <li>**Algoritma (Resep):**
+                                            <ol>
+                                                <li>Siapkan bahan (nasi, bumbu, telur).</li>
+                                                <li>Panaskan minyak.</li>
+                                                <li>Masukkan bumbu, tumis.</li>
+                                                <li>Masukkan nasi, aduk rata.</li>
+                                                <li>Tambahkan telur, aduk.</li>
+                                                <li>Sajikan.</li>
+                                            </ol>
+                                        </li>
+                                        <li>**Program Komputer:** Kamu yang "memasak" nasi goreng mengikuti resep tersebut.</li>
+                                        <li>**Solusi:** Nasi goreng siap disantap!</li>
+                                    </ul>
+                                </div>
+                            </details>        
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Cara Mengubah Masalah ke Program <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>**Identifikasi Masalah:** Pahami kebutuhan dan tujuan program.</li>
+                                <li>**Rancang Algoritma:** Buat langkah-langkah logis penyelesaian masalah.</li>
+                                <li>**Pilih Bahasa Pemrograman:** Tentukan bahasa yang sesuai (misal: Python untuk data, JavaScript untuk web).</li>
+                                <li>**Tulis Kode:** Terjemahkan algoritma ke dalam sintaks bahasa pemrograman.</li>
+                                <li>**Uji & Debug:** Pastikan program berjalan sesuai harapan.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Notasi Algoritma <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Algoritma dapat direpresentasikan dalam beberapa bentuk:</p>
+                            <ul>
+                                <li><i class="fas fa-align-left icon-prefix"></i> **Kalimat Deskriptif:** Menggunakan bahasa sehari-hari.</li>
+                                <li><i class="fas fa-project-diagram icon-prefix"></i> **Flowchart:** Menggunakan simbol grafis.</li>
+                                <li><i class="fas fa-code icon-prefix"></i> **Pseudocode:** Mirip kode program, tapi tidak terikat sintaks bahasa tertentu.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 2: Kalimat Deskriptif -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-file-alt icon-prefix"></i>Kalimat Deskriptif <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu Kalimat Deskriptif? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Cara menuliskan instruksi algoritma dalam bentuk untaian kalimat.</li>
+                                <li>Ditulis dalam bahasa yang jelas, baku, dan mudah dipahami.</li>
+                                <li>Mirip dengan langkah-langkah dalam resep atau panduan.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh: Menghitung Luas Persegi Panjang <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Langkah-langkah:</p>
+                            <ol>
+                                <li>Mulai.</li>
+                                <li>Baca nilai panjang.</li>
+                                <li>Baca nilai lebar.</li>
+                                <li>Hitung luas dengan rumus: panjang dikali lebar.</li>
+                                <li>Tampilkan hasil luas.</li>
+                                <li>Selesai.</li>
+                            </ol>
+                            <p class="note"><span class="icon-text">📌</span> **Catatan:** Urutan langkah harus logis. Misalnya, jangan tampilkan hasil sebelum nilai input dimasukkan.</p>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Pentingnya Bahasa Baku <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Gunakan bahasa yang formal dan konsisten untuk menghindari ambiguitas.</p>
+                            <ul>
+                                <li><span class="icon-text">✅</span> "Masukkan nilai panjang."</li>
+                                <li><span class="icon-text">❌</span> "Masukin panjangnya."</li>
+                            </ul>
+                            <p>Tujuannya agar algoritma lebih terstruktur dan profesional.</p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 3: Apa itu Flowchart? -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-project-diagram icon-prefix"></i>Flowchart<i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu Flowchart? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Flowchart adalah representasi visual dari algoritma menggunakan simbol-simbol standar.</li>
+                                <li>Mempermudah pemahaman alur logika program.</li>
+                                <li>Setiap simbol memiliki makna dan fungsi spesifik.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Simbol-Simbol Dasar Flowchart <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Simbol</th>
+                                            <th>Nama</th>
+                                            <th>Fungsi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Oval</td>
+                                            <td>Terminator</td>
+                                            <td>Mulai/Selesai (Start/End)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Panah</td>
+                                            <td>Garis Alir</td>
+                                            <td>Menunjukkan arah aliran proses</td>
+                                        </tr>                                        <tr>
+                                            <td>Segienam Horizontal</td>
+                                            <td>Preparation</td>
+                                            <td>Menyatakan deklarasi/variabel awal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jajar Genjang</td>
+                                            <td>Input/Output</td>
+                                            <td>Memasukkan atau menampilkan data</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Persegi Panjang</td>
+                                            <td>Proses</td>
+                                            <td>Operasi atau perhitungan</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="note">Ini hanya sebagian simbol dasar. Ada banyak simbol lain untuk kasus yang lebih kompleks.</p>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh Flowchart: Menghitung Luas Persegi Panjang <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Urutan logika dalam flowchart:</p>
+                            <ol>
+                                <li>**Start** (Terminator)</li>
+                                <li>**Input** Panjang (Jajar Genjang)</li>
+                                <li>**Input** Lebar (Jajar Genjang)</li>
+                                <li>**Proses:** Hitung Luas = Panjang * Lebar (Persegi Panjang)</li>
+                                <li>**Output** Luas (Jajar Genjang)</li>
+                                <li>**End** (Terminator)</li>
+                            </ol>
+                            <p class="note"><span class="icon-text">🔍</span> **Penjelasan Variabel:**</p>
+                            <p>Variabel adalah "wadah" di memori komputer untuk menyimpan nilai. Sebelum digunakan, variabel perlu dideklarasikan (disiapkan wadahnya).</p>
+                            <pre><code><span class="comment">// Pseudocode sederhana untuk ilustrasi</span>
+<span class="keyword">DECLARE</span> panjang, lebar, luas <span class="keyword">AS</span> INTEGER
+<span class="keyword">INPUT</span> panjang
+<span class="keyword">INPUT</span> lebar
+<span class="keyword">SET</span> luas = panjang * lebar
+<span class="keyword">DISPLAY</span> luas</code></pre>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tips Membuat Flowchart <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ol>
+                                <li>Gunakan simbol yang benar sesuai fungsinya.</li>
+                                <li>Pastikan alur logis dan mudah diikuti.</li>
+                                <li>Gunakan bahasa yang konsisten dan jelas di setiap simbol.</li>
+                                <li>Setiap flowchart harus memiliki satu titik mulai dan satu titik selesai.</li>
+                            </ol>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 4: Apa itu Pseudocode? -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-code icon-prefix"></i>Pseudocode<i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu Pseudocode? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>Pseudocode adalah deskripsi algoritma yang menyerupai kode program.</li>
+                                <li>Menggunakan bahasa yang sederhana (seringkali Inggris) tanpa terikat sintaks bahasa pemrograman tertentu.</li>
+                                <li>Fokus pada logika, bukan detail implementasi.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Ciri-ciri Pseudocode <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ol>
+                                <li>Menggunakan kata kunci umum seperti <span class="code">START</span>, <span class="code">END</span>, <span class="code">READ</span>, <span class="code">WRITE</span>, <span class="code">IF</span>, <span class="code">ELSE</span>, <span class="code">WHILE</span>, <span class="code">FOR</span>.</li>
+                                <li>Tidak memiliki standar baku yang ketat, namun harus konsisten.</li>
+                                <li>Mudah diterjemahkan ke berbagai bahasa pemrograman.</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh Pseudocode: Luas Persegi Panjang <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Berikut adalah contoh pseudocode untuk menghitung luas persegi panjang:</p>
+                            <pre><code><span class="keyword">START</span>
+    <span class="comment">// Deklarasi variabel</span>
+    <span class="keyword">DECLARE</span> panjang <span class="keyword">AS</span> INTEGER
+    <span class="keyword">DECLARE</span> lebar <span class="keyword">AS</span> INTEGER
+    <span class="keyword">DECLARE</span> luas <span class="keyword">AS</span> INTEGER
+
+    <span class="comment">// Input nilai dari pengguna</span>
+    <span class="keyword">READ</span> panjang
+    <span class="keyword">READ</span> lebar
+
+    <span class="comment">// Proses perhitungan</span>
+    <span class="keyword">SET</span> luas = panjang * lebar
+
+    <span class="comment">// Tampilkan hasil</span>
+    <span class="keyword">PRINT</span> luas
+<span class="keyword">END</span></code></pre>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Perbandingan Notasi Algoritma <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Aspek</th>
+                                            <th>Kalimat Deskriptif</th>
+                                            <th>Flowchart</th>
+                                            <th>Pseudocode</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Bentuk</td>
+                                            <td>Untaian kalimat</td>
+                                            <td>Diagram/simbol grafis</td>
+                                            <td>Mirip kode program</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target Audiens</td>
+                                            <td>Non-programmer, awam</td>
+                                            <td>Visual thinker, desainer sistem</td>
+                                            <td>Programmer, tim IT</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kelebihan</td>
+                                            <td>Sangat mudah dimengerti</td>
+                                            <td>Visual, mudah melihat alur</td>
+                                            <td>Mendekati kode nyata, mudah diimplementasi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kekurangan</td>
+                                            <td>Kurang terstruktur untuk kompleksitas</td>
+                                            <td>Membutuhkan alat gambar, sulit untuk algoritma besar</td>
+                                            <td>Bisa rancu jika tidak konsisten</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Kapan Menggunakan Setiap Notasi? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>**Kalimat Deskriptif:** Untuk menjelaskan konsep dasar kepada non-teknis.</li>
+                                <li>**Flowchart:** Untuk memvisualisasikan alur kompleks atau presentasi.</li>
+                                <li>**Pseudocode:** Untuk merancang logika program sebelum menulis kode asli, atau berkomunikasi antar programmer.</li>
+                            </ul>
+                            <p class="note"><span class="icon-text">💡</span> **Penting:** Pilih notasi yang paling sesuai dengan audiens dan kompleksitas masalah.</p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 5: Pengertian Variabel dan Konstanta -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-cube icon-prefix"></i>Variabel dan Konstanta <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Definisi <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>**Variabel:** Sebuah "wadah" di memori komputer yang nilainya dapat berubah selama program berjalan.</li>
+                                <li>**Konstanta:** Sebuah "wadah" di memori komputer yang nilainya tetap dan tidak dapat diubah setelah ditetapkan.</li>
+                            </ul>
+                            <p class="note"><span class="icon-text">📌</span> **Contoh:**</p>
+                            <p>Rumus luas lingkaran:</p>
+                            <ul>
+                                <li>Nilai (pi) adalah **konstanta** (sekitar 3.14159).</li>
+                                <li>Nilai (jari-jari) adalah **variabel** karena bisa berubah tergantung lingkaran yang dihitung.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Konsep Penting <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ol>
+                                <li>**Penyimpanan Sementara:** Data variabel/konstanta disimpan di RAM dan akan hilang saat program berakhir.</li>
+                                <li>**Nilai Variabel Fleksibel:** Nilai variabel dapat diubah berkali-kali.</li>
+                                <li>**Nilai Konstanta Tetap:** Nilai konstanta tidak bisa diubah setelah diinisialisasi.</li>
+                                <li>**Satu Data per Wadah:** Setiap variabel/konstanta hanya menyimpan satu nilai pada satu waktu.</li>
+                                <li>**Nilai Terakhir Berlaku:** Jika variabel diberi nilai berulang, hanya nilai terakhir yang akan digunakan.
+                                    <pre><code><span class="code">x = 10</span>
+<span class="code">x = 5</span>
+<span class="code">x = 50</span> <span class="comment">// Nilai x sekarang adalah 50</span></code></pre>
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Aturan Penulisan Nama <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ol>
+                                <li>Dimulai dengan huruf (A-Z, a-z). Tidak boleh angka atau simbol.</li>
+                                <li>Bersifat *case-sensitive* (misal: <span class="code">nama</span> dan <span class="code">Nama</span> adalah berbeda).</li>
+                                <li>Hanya boleh mengandung huruf, angka, dan garis bawah (<span class="code">_</span>).</li>
+                                <li>Tidak boleh mengandung spasi. Gunakan <span class="code">underscore_case</span> atau <span class="code">camelCase</span>.</li>
+                                <li>Sebaiknya deskriptif (misal: <span class="code">totalHarga</span> lebih baik dari <span class="code">th</span>).</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Notasi Pseudocode <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>**Konstanta:** <span class="code">CONSTANT NAMA_KONSTANTA = Nilai</span></li>
+                                <li>**Variabel:** <span class="code">DECLARE namaVariabel = NilaiAwal</span></li>
+                            </ul>
+                            <p>Contoh:</p>
+                            <pre><code><span class="keyword">CONSTANT</span> PI = 3.14159
+<span class="keyword">DECLARE</span> radius = 7</code></pre>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 6: Tipe Data dalam Pemrograman -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-database icon-prefix"></i>Tipe Data dalam Pemrograman <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu Tipe Data? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tipe data adalah klasifikasi yang menentukan jenis nilai yang dapat disimpan oleh suatu variabel. Penting untuk:</p>
+                            <ul>
+                                <li>Mengoptimalkan penggunaan memori.</li>
+                                <li>Memastikan operasi yang benar pada data.</li>
+                                <li>Mencegah kesalahan program.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Jenis-Jenis Tipe Data Utama <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Jenis</th>
+                                            <th>Contoh</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>**Integer** (Bilangan Bulat)</td>
+                                            <td><span class="code">5</span>, <span class="code">-10</span>, <span class="code">2000</span></td>
+                                            <td>Angka tanpa desimal.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**Float/Double** (Bilangan Pecahan)</td>
+                                            <td><span class="code">3.14</span>, <span class="code">-0.75</span></td>
+                                            <td>Angka dengan desimal. <span class="code">Double</span> memiliki akurasi lebih tinggi.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**Char** (Karakter)</td>
+                                            <td><span class="code">'A'</span>, <span class="code">'7'</span>, <span class="code">'@'</span></td>
+                                            <td>Satu karakter tunggal.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**String** (Teks)</td>
+                                            <td><span class="code">"Halo Dunia"</span>, <span class="code">"Nama Saya"</span></td>
+                                            <td>Kumpulan karakter (teks).</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**Boolean** (Logika)</td>
+                                            <td><span class="code">true</span>, <span class="code">false</span></td>
+                                            <td>Hanya memiliki dua nilai: benar atau salah.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tipe Data Bilangan Bulat  (Integer)<i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Ukuran Bit</th>
+                                            <th>Jangkauan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>byte</td>
+                                            <td><span class="code">8</span>-bit</td>
+                                            <td><span class="code">-128</span> hingga <span class="code">127</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>short</td>
+                                            <td><span class="code">16</span>-bit</td>
+                                            <td><span class="code">-32.768</span> hingga <span class="code">32.767</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>int</td>
+                                            <td><span class="code">32</span>-bit</td>
+                                            <td><span class="code">-2.147.483.648</span> hingga <span class="code">2.147.483.647</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>long</td>
+                                            <td><span class="code">64</span>-bit</td>
+                                            <td>Nilai sangat besar (miliaran++)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tipe Data Bilangan Pecahan (Float/Double)<i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Ukuran Bit</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>float</td>
+                                            <td><span class="code">32</span>-bit</td>
+                                            <td>Akurasi sedang</td>
+                                        </tr>
+                                        <tr>
+                                            <td>double</td>
+                                            <td><span class="code">64</span>-bit</td>
+                                            <td>Akurasi tinggi</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tipe Data Karakter & Teks (Char)<i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>char</td>
+                                            <td>Menyimpan satu karakter/simbol saja ('A')</td>
+                                        </tr>
+                                        <tr>
+                                            <td>String</td>
+                                            <td>Menyimpan banyak karakter ("Halo")</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tipe Data Boolean<i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>boolean</td>
+                                            <td>true atau false</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Mengapa Tipe Data Penting? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ul>
+                                <li>**Efisiensi Memori:** Memilih tipe data yang tepat menghemat ruang memori.</li>
+                                <li>**Validasi Data:** Memastikan data yang disimpan sesuai dengan yang diharapkan.</li>
+                                <li>**Operasi yang Benar:** Mencegah kesalahan saat melakukan operasi (misal: tidak bisa mengalikan teks).</li>
+                                <li>**Keterbacaan Kode:** Membuat kode lebih mudah dipahami.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 7: Apa Itu Operator? -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-calculator icon-prefix"></i>Apa Itu Operator<i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Definisi Operator <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Operator adalah simbol-simbol khusus yang digunakan untuk melakukan operasi pada nilai (operand) dalam program.</p>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Jenis-Jenis Operator <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <h3>1. Operator Penugasan (Assignment Operator)</h3>
+                            <ul>
+                                <li>Simbol: <span class="code">=</span></li>
+                                <li>Fungsi: Memberikan nilai ke variabel.</li>
+                                <li>Contoh: <span class="code">umur = 25</span> (variabel <span class="code">umur</span> diisi nilai 25).</li>
+                                <li><span class="icon-text">📌</span> **Catatan:** <span class="code">=</span> bukan "sama dengan" matematis, melainkan "diisi dengan".</li>
+                            </ul>
+
+                            <h3>2. Operator Aritmatika (Arithmetic Operator)</h3>
+                            <p>Digunakan untuk perhitungan matematis.</p>
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Operasi</th>
+                                            <th>Simbol</th>
+                                            <th>Contoh</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Penjumlahan</td><td><span class="code">+</span></td><td><span class="code">a + b</span></td></tr>
+                                        <tr><td>Pengurangan</td><td><span class="code">-</span></td><td><span class="code">a - b</span></td></tr>
+                                        <tr><td>Perkalian</td><td><span class="code">*</span></td><td><span class="code">a * b</span></td></tr>
+                                        <tr><td>Pembagian</td><td><span class="code">/</span></td><td><span class="code">a / b</span></td></tr>
+                                        <tr><td>Modulus (Sisa Bagi)</td><td><span class="code">%</span></td><td><span class="code">a % b</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>3. Operator Perbandingan (Comparison Operator)</h3>
+                            <p>Membandingkan dua nilai dan menghasilkan <span class="code">true</span> atau <span class="code">false</span>.</p>
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Operasi</th>
+                                            <th>Simbol</th>
+                                            <th>Contoh</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Sama Dengan</td><td><span class="code">==</span></td><td><span class="code">a == b</span></td></tr>
+                                        <tr><td>Tidak Sama Dengan</td><td><span class="code">!=</span></td><td><span class="code">a != b</span></td></tr>
+                                        <tr><td>Lebih Besar Dari</td><td><span class="code">></span></td><td><span class="code">a > b</span></td></tr>
+                                        <tr><td>Kurang Dari</td><td><span class="code"><</span></td><td><span class="code">a < b</span></td></tr>
+                                        <tr><td>Lebih Besar Sama Dengan</td><td><span class="code">>=</span></td><td><span class="code">a >= b</span></td></tr>
+                                        <tr><td>Kurang Dari Sama Dengan</td><td><span class="code"><=</span></td><td><span class="code">a <= b</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3>4. Operator Logika (Logical Operator)</h3>
+                            <p>Menggabungkan atau memanipulasi nilai boolean.</p>
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Operasi</th>
+                                            <th>Simbol</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>AND</td>
+                                            <td><span class="code">&&</span></td>
+                                            <td><span class="code">true</span> jika semua kondisi <span class="code">true</span>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>OR</td>
+                                            <td><span class="code">||</span></td>
+                                            <td><span class="code">true</span> jika salah satu atau kedua kondisi <span class="code">true</span>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NOT</td>
+                                            <td><span class="code">!</span></td>
+                                            <td>Membalik nilai boolean (<span class="code">true</span> jadi <span class="code">false</span>, sebaliknya).</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Tabel Kebenaran (Logical AND, OR, NOT) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>A</th>
+                                            <th>B</th>
+                                            <th>A && B</th>
+                                            <th>A || B</th>
+                                            <th>!A</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>True</td><td>True</td><td>True</td><td>True</td><td>False</td></tr>
+                                        <tr><td>True</td><td>False</td><td>False</td><td>True</td><td>False</td></tr>
+                                        <tr><td>False</td><td>True</td><td>False</td><td>True</td><td>True</td></tr>
+                                        <tr><td>False</td><td>False</td><td>False</td><td>False</td><td>True</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 8: Logika Percabangan (Conditional Statement) -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-route icon-prefix"></i>Logika Percabangan (Conditional Statement) <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <p>Logika percabangan memungkinkan program membuat keputusan dan menjalankan blok kode yang berbeda berdasarkan kondisi tertentu.</p>
+                    <p class="note"><span class="icon-text">💡</span> **Analogi:** "Jika hujan, bawa payung. Jika tidak, bawa kacamata hitam."</p>
+
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Jenis-Jenis Percabangan <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Jenis</th>
+                                            <th>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>**IF Tunggal**</td>
+                                            <td>Satu kondisi, satu aksi jika benar.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**IF-ELSE**</td>
+                                            <td>Dua kemungkinan aksi (jika benar lakukan A, jika salah lakukan B).</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**IF-ELSE IF-ELSE**</td>
+                                            <td>Banyak kondisi berurutan.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>**SWITCH CASE**</td>
+                                            <td>Memilih aksi berdasarkan nilai pasti dari satu variabel.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">I. IF Tunggal <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Hanya menjalankan aksi jika kondisi bernilai <span class="code">true</span>. Jika <span class="code">false</span>, tidak ada yang terjadi.</p>
+                            <pre><code><span class="keyword">IF</span> kondisi <span class="keyword">THEN</span>
+    <span class="comment">// Aksi jika kondisi benar</span>
+<span class="keyword">ENDIF</span></code></pre>
+                            <p class="note">**Contoh:** Jika nilai > 75, tampilkan "Lulus".</p>
+                        </div>
+                    </details>
+
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">II. IF-ELSE (Ganda) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Menjalankan satu aksi jika kondisi <span class="code">true</span>, dan aksi lain jika kondisi <span class="code">false</span>.</p>
+                            <pre><code><span class="keyword">IF</span> kondisi <span class="keyword">THEN</span>
+    <span class="comment">// Aksi jika kondisi benar</span>
+<span class="keyword">ELSE</span>
+    <span class="comment">// Aksi jika kondisi salah</span>
+<span class="keyword">ENDIF</span></code></pre>
+                            <p class="note">**Contoh:** Jika nilai > 75, tampilkan "Lulus", jika tidak, tampilkan "Tidak Lulus".</p>
+                        </div>
+                    </details>
+
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">III. IF-ELSE IF-ELSE (Majemuk) <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Digunakan untuk menangani lebih dari dua kondisi. Pengecekan dilakukan berurutan.</p>
+                            <pre><code><span class="keyword">IF</span> kondisi1 <span class="keyword">THEN</span>
+    <span class="comment">// Aksi untuk kondisi1</span>
+<span class="keyword">ELSE IF</span> kondisi2 <span class="keyword">THEN</span>
+    <span class="comment">// Aksi untuk kondisi2</span>
+<span class="keyword">ELSE</span>
+    <span class="comment">// Aksi default jika semua kondisi di atas salah</span>
+<span class="keyword">ENDIF</span></code></pre>
+                            <p class="note">**Contoh:** Menentukan grade nilai (A, B, C, D, E).</p>
+                        </div>
+                    </details>
+
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">IV. SWITCH CASE <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Memilih blok kode untuk dieksekusi berdasarkan nilai pasti dari suatu variabel.</p>
+                            <pre><code><span class="keyword">SWITCH</span> (variabel)
+    <span class="keyword">CASE</span> nilai1:
+        <span class="comment">// Aksi untuk nilai1</span>
+        <span class="keyword">BREAK</span>
+    <span class="keyword">CASE</span> nilai2:
+        <span class="comment">// Aksi untuk nilai2</span>
+        <span class="keyword">BREAK</span>
+    <span class="keyword">DEFAULT</span>:
+        <span class="comment">// Aksi jika tidak ada nilai yang cocok</span>
+<span class="keyword">END SWITCH</span></code></pre>
+                            <p class="note">**Contoh:** Menampilkan nama hari berdasarkan angka (1=Senin, 2=Selasa, dst.).</p>
+                        </div>
+                    </details>
+
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Perbedaan IF vs SWITCH CASE <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <div class="table-responsive">
+                                <table border="1px">
+                                    <thead>
+                                        <tr>
+                                            <th>Aspek</th>
+                                            <th>IF</th>
+                                            <th>SWITCH CASE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Jenis Kondisi</td>
+                                            <td>Fleksibel (perbandingan, logika kompleks, range nilai)</td>
+                                            <td>Nilai pasti (konstan) dari satu variabel</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Keterbacaan</td>
+                                            <td>Bisa panjang dan rumit jika banyak kondisi</td>
+                                            <td>Lebih rapi untuk banyak pilihan nilai pasti</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Penggantian</td>
+                                            <td>Tidak selalu bisa diganti <span class="code">SWITCH CASE</span></td>
+                                            <td>Bisa diganti dengan <span class="code">IF-ELSE IF</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="note"><span class="icon-text">📌</span> **Kesimpulan:** Gunakan <span class="code">IF</span> untuk logika kompleks, <span class="code">SWITCH CASE</span> untuk pilihan berdasarkan nilai tetap.</p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 9: Logika Perulangan (Looping) -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-redo-alt icon-prefix"></i>Logika Perulangan (Looping) <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Pengertian Looping <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Perulangan (looping) adalah proses mengulang eksekusi satu atau lebih pernyataan (blok kode) secara berulang hingga kondisi tertentu terpenuhi.</p>
+                            <p class="note"><span class="icon-text">💡</span> **Analogi:** Menghitung 1 sampai 10. Kamu mengulang aksi "menambah satu" sampai mencapai angka 10.</p>
+                            <p>Komponen utama perulangan:</p>
+                            <ol>
+                                <li>**Inisialisasi:** Nilai awal variabel kontrol.</li>
+                                <li>**Kondisi:** Syarat agar perulangan terus berjalan.</li>
+                                <li>**Iterasi:** Perubahan nilai variabel kontrol (increment/decrement) setiap putaran.</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Jenis-Jenis Perulangan <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <h3>1. For Loop</h3>
+                            <ul>
+                                <li>**Kapan Digunakan:** Ketika jumlah iterasi (pengulangan) sudah diketahui secara pasti.</li>
+                                <li>**Struktur Umum:**
+                                    <pre><code><span class="keyword">FOR</span> (inisialisasi; kondisi; iterasi) <span class="keyword">DO</span>
+    <span class="comment">// Blok kode yang diulang</span>
+<span class="keyword">END FOR</span></code></pre>
+                                </li>
+                                <li>**Contoh Pseudocode:** Menampilkan angka 1 sampai 5
+                                    <pre><code><span class="keyword">FOR</span> i = 1 <span class="keyword">TO</span> 5 <span class="keyword">DO</span>
+    <span class="keyword">PRINT</span> i
+<span class="keyword">END FOR</span></code></pre>
+                                    <p>Output:</p>
+                                    <pre><code>1
+2
+3
+4
+5</code></pre>
+                                </li>
+                            </ul>
+
+                            <h3>2. While Loop</h3>
+                            <ul>
+                                <li>**Kapan Digunakan:** Ketika jumlah iterasi belum pasti, perulangan akan terus berjalan selama kondisi <span class="code">true</span>.</li>
+                                <li>**Struktur Umum:**
+                                    <pre><code><span class="keyword">WHILE</span> kondisi <span class="keyword">DO</span>
+    <span class="comment">// Blok kode yang diulang</span>
+    <span class="comment">// Pastikan ada perubahan yang membuat kondisi suatu saat menjadi false</span>
+<span class="keyword">END WHILE</span></code></pre>
+                                </li>
+                                <li>**Contoh Pseudocode:** Menampilkan angka 1 sampai 5
+                                    <pre><code><span class="keyword">DECLARE</span> i = 1
+<span class="keyword">WHILE</span> i <= 5 <span class="keyword">DO</span>
+    <span class="keyword">PRINT</span> i
+    i = i + 1
+<span class="keyword">END WHILE</span></code></pre>
+                                    <p>Output:</p>
+                                    <pre><code>1
+2
+3
+4
+5</code></pre>
+                                </li>
+                            </ul>
+
+                            <h3>3. Do While Loop</h3>
+                            <ul>
+                                <li>**Kapan Digunakan:** Mirip <span class="code">WHILE</span>, tetapi blok kode akan dieksekusi minimal satu kali, baru kemudian kondisi dicek.</li>
+                                <li>**Struktur Umum:**
+                                    <pre><code><span class="keyword">DO</span>
+    <span class="comment">// Blok kode yang diulang</span>
+    <span class="comment">// Pastikan ada perubahan yang membuat kondisi suatu saat menjadi false</span>
+<span class="keyword">WHILE</span> kondisi</code></pre>
+                                </li>
+                                <li>**Contoh Pseudocode:** Menampilkan "Halo" minimal sekali
+                                    <pre><code><span class="keyword">DECLARE</span> i = 10
+<span class="keyword">DO</span>
+    <span class="keyword">PRINT</span> "Halo"
+    i = i + 1
+<span class="keyword">WHILE</span> i < 5</code></pre>
+                                    <p>Output:</p>
+                                    <pre><code>Halo</code></pre>
+                                    <p class="note">Meskipun <span class="code">i < 5</span> awalnya <span class="code">false</span>, "Halo" tetap dicetak sekali.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-text">Dibuat oleh <span class="author-name">Raihan Fahrel Akbar</span> &copy; 2025</p>
+            <div class="footer-decoration"></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Untuk rendering LaTeX -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            TeX: {
+                Macros: {
+                    text: ['\\text{#1}', 1]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

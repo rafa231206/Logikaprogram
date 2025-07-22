@@ -1,0 +1,350 @@
+:root {
+    /* Dark Mode Colors (New - for a programming theme) */
+    --bg-color-dark: #282c34; /* Dark charcoal/editor background */
+    --text-color-dark: #abb2bf; /* Light gray for code readability */
+    --primary-color-dark: #61afef; /* Blue for highlights (like syntax) */
+    --accent-color-dark: #3e4451; /* Slightly lighter dark for accordion background */
+    --hover-color-dark: #4b5263; /* Darker hover for interactive elements */
+    --border-color-dark: #343a40; /* Dark border color */
+
+    /* Light Mode Colors (Updated - keeping for fallback/option) */
+    --bg-color-light: #f1f1f1;
+    --text-color-light: #343a40;
+    --primary-color-light: #1abc9c;
+    --accent-color-light: #e9ecef;
+    --hover-color-light: #fdfcfa;
+    --border-color-light: #dee2e6;
+}
+
+/* Default to dark mode for programming theme */
+body {
+    background-color: var(--bg-color-dark); /* Use dark background */
+    color: var(--text-color-dark); /* Use light text color */
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace; /* Monospace font for code feel */
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
+}
+
+/* Optional: Light mode toggle (requires JS) */
+body.light-mode {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: var(--primary-color-dark); /* Use primary dark color */
+    color: #fff;
+    border-bottom: 2px solid var(--border-color-dark); /* Use dark border color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Slightly stronger shadow */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em; /* Slightly larger for impact */
+    color: #fff;
+    word-wrap: break-word;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Add text shadow for depth */
+}
+
+p {
+    font-family: 'Poppins', sans-serif; /* Keep Poppins for general text */
+    font-size: 1em;
+    max-width: 700px;
+    margin: 0.625rem auto;
+    line-height: 1.6;
+}
+
+main {
+    padding: 1.875rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 2em; /* Slightly larger */
+    color: var(--primary-color-dark); /* Highlight section titles with primary dark */
+    text-transform: uppercase; /* Uppercase for section titles */
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+.accordion {
+    background: var(--accent-color-dark); /* Use accent dark color */
+    border-radius: 8px;
+    margin: 0.9375rem 0;
+    padding: 1.125rem 1.5625rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color-dark); /* Use dark border color */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Stronger shadow */
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accordion:hover {
+    background: var(--hover-color-dark); /* Use dark hover color */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* More pronounced shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+summary {
+    font-weight: 600;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color-dark); /* Ensure summary text color is readable */
+    list-style: none;
+    padding: 0.5rem 0;
+    min-height: 44px;
+    box-sizing: border-box;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace; /* Monospace for summary */
+}
+
+/* Style for the FontAwesome arrow icon */
+.arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.9em; /* Slightly larger arrow */
+    color: var(--primary-color-dark); /* Color the arrow with primary dark */
+    margin-left: 0.625rem;
+}
+
+/* Rotate arrow when accordion is open */
+details[open] .arrow {
+    transform: rotate(90deg);
+}
+
+/* Optional: Style for a prefix icon if added */
+.icon-prefix {
+    margin-right: 0.625rem;
+    color: var(--primary-color-dark); /* Color prefix icon with primary dark */
+    font-size: 1.2em; /* Slightly larger icon */
+}
+
+.content {
+    padding: 0.9375rem 0 0.3125rem 0;
+    animation: fadeIn 0.5s ease;
+    display: none;
+    border-top: 1px dashed var(--border-color-dark); /* Dashed border for content separator */
+    margin-top: 0.625rem;
+    padding-top: 0.9375rem;
+    line-height: 1.6;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace; /* Monospace for content */
+    color: var(--text-color-dark); /* Ensure content text color is readable */
+}
+
+.content ul {
+    list-style-type: '>'; /* Use a custom arrow for list items */
+    padding-left: 1.5625rem;
+}
+
+.content ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem; /* Add some padding for the custom bullet */
+}
+
+details[open] .content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1.5625rem 1rem;
+    background: var(--primary-color-dark); /* Use primary dark color */
+    color: #fff;
+    border-top: 2px solid var(--border-color-dark);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 0.95em;
+    color: #fff;
+}
+
+.footer-decoration {
+    height: 2px;
+    background: var(--border-color-dark); /* Use dark border color */
+    margin: 0.9375rem auto 0;
+    max-width: 150px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 0.95em;
+    }
+
+    summary {
+        font-size: 1em;
+    }
+
+    .accordion {
+        padding: 1rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    header {
+        padding: 1.5rem 0.75rem;
+    }
+
+    main {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .accordion {
+        padding: 0.75rem 1rem;
+        margin: 0.625rem 0;
+    }
+
+    summary {
+        font-size: 0.95em;
+    }
+
+    .content {
+        padding: 0.75rem 0 0.25rem 0;
+        padding-top: 0.75rem;
+    }
+
+    .content ul {
+        padding-left: 1.25rem;
+    }
+}
+
+/* Ensure no horizontal overflow */
+body, html {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main-header, .content-container, .main-footer {
+    width: 100%;
+    max-width: 100%;
+}
+
+.accordion-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sub-accordion {
+    margin-top: 0.625rem;
+    border: 1px solid var(--border-color-dark); /* Use dark border color */
+    border-radius: 6px;
+    background: var(--bg-color-dark); /* Use dark background for sub-accordions */
+    padding: 0.75rem 1rem;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2); /* Inner shadow for sub-accordion */
+}
+
+.sub-accordion summary {
+    font-size: 0.95em;
+    min-height: 40px;
+    color: var(--text-color-dark); /* Ensure sub-summary text color is readable */
+}
+
+.sub-accordion .content {
+    border-top: 1px dashed var(--border-color-dark); /* Dashed border for sub-content */
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    color: var(--text-color-dark); /* Ensure sub-content text color is readable */
+}
+
+.sub-accordion .content ul {
+    padding-left: 1.25rem;
+}
+
+/* Code block styling (new) */
+pre {
+    background-color: #1e1e1e; /* Very dark background for code blocks */
+    color: #d4d4d4; /* Light gray for code text */
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto; /* Enable horizontal scrolling for long lines */
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-top: 1rem;
+    border: 1px solid #333;
+}
+
+code {
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+    background-color: rgba(97, 175, 239, 0.2); /* Light blue background for inline code */
+    color: var(--primary-color-dark); /* Primary dark color for inline code */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+/* Syntax highlighting like colors (example, can be expanded) */
+.keyword { color: #c678dd; } /* Purple */
+.string { color: #98c379; } /* Green */
+.number { color: #d19a66; } /* Orange */
+.comment { color: #5c6370; } /* Gray */
+.function { color: #61afef; } /* Blue */
+.variable { color: #e06c75; } /* Red */
+
+/* Scrollbar styling for a more modern look */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color-dark);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color-dark);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color-dark);
+}
