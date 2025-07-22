@@ -13,7 +13,7 @@
     <header class="main-header">
         <div class="header-content">
             <h1 class="main-title"><i class="fas fa-code"></i> Logika Pemrograman</h1>
-            <p class="tagline">Panduan lengkap untuk memahami dasar-dasar logika pemrograman.</p>
+            <p class="tagline" style="margin: 0.625rem auto;" >Panduan lengkap untuk memahami dasar-dasar logika pemrograman.</p>
             <div class="header-decoration"></div>
         </div>
     </header>
@@ -603,7 +603,7 @@
             <!-- Bagian 7: Apa Itu Operator? -->
             <details class="accordion">
                 <summary class="accordion-summary">
-                    <i class="fas fa-calculator icon-prefix"></i>Apa Itu Operator<i class="fas fa-chevron-right arrow"></i>
+                    <i class="fas fa-calculator icon-prefix"></i>Operator<i class="fas fa-chevron-right arrow"></i>
                 </summary>
                 <div class="content accordion-content">
                     <details class="sub-accordion">
@@ -731,9 +731,78 @@
                     <i class="fas fa-route icon-prefix"></i>Logika Percabangan (Conditional Statement) <i class="fas fa-chevron-right arrow"></i>
                 </summary>
                 <div class="content accordion-content">
-                    <p>Logika percabangan memungkinkan program membuat keputusan dan menjalankan blok kode yang berbeda berdasarkan kondisi tertentu.</p>
-                    <p class="note"><span class="icon-text">💡</span> **Analogi:** "Jika hujan, bawa payung. Jika tidak, bawa kacamata hitam."</p>
+                <details class="sub-accordion">
+                    <summary class="accordion-summary">Apa itu Logika Percabangan? <i class="fas fa-angle-right arrow"></i></summary>
+                    <div class="content sub-accordion-content">
+                        <p>Logika percabangan digunakan untuk menjalankan perintah tertentu berdasarkan kondisi. Jika kondisi bernilai benar (true), maka perintah akan dijalankan.</p>
+                        <p class="note"><span class="icon-text">💡</span> **Analogi:** "Jika hujan, bawa payung. Jika tidak, bawa kacamata hitam."</p>
+                    </div>
+                </details>
+                <details class="sub-accordion">
+                    <summary class="accordion-summary">Contoh Dalam simbol flowchart (dessicion) <i class="fas fa-angle-right arrow"></i></summary>
+                    <div class="content sub-accordion-content">
+                        <h2>Contoh Kasus: Penerimaan Karyawan</h2>
+                        <h3>Syarat:</h3>
+                        <ul>
+                            <li>Umur <span class="code">≥ 17</span> tahun</li>
+                            <li>Jenis kelamin <span class="code">=</span> Laki-laki / Perempuan (L || P)</li>
+                            <li>Pendidikan ≥ SLTA</li>
+                        </ul>
 
+                        <h3>📌 Contoh Inputan Kemampuan :</h3>
+                        <div class="table-responsive">
+                            <table border="1px">
+                                <thead>
+                                    <tr>
+                                        <th>Kondisi</th>
+                                        <th>Hasil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Umur = 17 tahun</td><td>Lolos syarat umur</td></tr>
+                                    <tr><td>Jenis kelamin = L</td><td>Lolos syarat gender</td></tr>
+                                    <tr><td>Pendidikan = SLTP</td><td>❌ Tidak lolos pendidikan</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3>📌 Kondisi dengan Operator AND (&&)</h3>
+                        <h4>Semua syarat harus terpenuhi</h4>
+                        <div class="table-responsive">
+                            <table border="1px">
+                                <thead>
+                                    <tr>
+                                        <th>Kondisi</th>
+                                        <th>Hasil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Umur = 17 tahun</td><td>Lolos syarat umur</td></tr>
+                                    <tr><td>Jenis kelamin = L</td><td>Lolos syarat gender</td></tr>
+                                    <tr><td>Pendidikan = SLTP</td><td>❌ Tidak lolos pendidikan</td></tr>
+                                </tbody>
+                            </table>
+                            <h4>Hasil (AND): ❌ Tidak lolos, karena satu saja tidak terpenuhi (pendidikan).</h4>
+                        </div>
+                        <h3>📌 Kondisi dengan Operator OR (||)</h3>
+                        <h4>Cukup satu syarat yang terpenuhi agar hasilnya true</h4>
+                        <div class="table-responsive">
+                            <table border="1px">
+                                <thead>
+                                    <tr>
+                                        <th>Kondisi</th>
+                                        <th>Hasil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Umur = 17 tahun</td><td>Lolos syarat umur</td></tr>
+                                    <tr><td>Jenis kelamin = L</td><td>Lolos syarat gender</td></tr>
+                                    <tr><td>Pendidikan = SLTP</td><td>❌ Tidak lolos pendidikan</td></tr>
+                                </tbody>
+                            </table>
+                            <h4>Hasil (OR): ✅ Lolos, karena ada dua syarat yang terpenuhi.</h4>
+                        </div>
+                    </div>
+                </details>
                     <details class="sub-accordion">
                         <summary class="accordion-summary">Jenis-Jenis Percabangan <i class="fas fa-angle-right arrow"></i></summary>
                         <div class="content sub-accordion-content">
@@ -772,10 +841,21 @@
                         <summary class="accordion-summary">I. IF Tunggal <i class="fas fa-angle-right arrow"></i></summary>
                         <div class="content sub-accordion-content">
                             <p>Hanya menjalankan aksi jika kondisi bernilai <span class="code">true</span>. Jika <span class="code">false</span>, tidak ada yang terjadi.</p>
-                            <pre><code><span class="keyword">IF</span> kondisi <span class="keyword">THEN</span>
-    <span class="comment">// Aksi jika kondisi benar</span>
+                            <p>Urutan logika dalam flowchart:</p>
+                            <li><strong>Start</strong> (Terminator)</li>
+                            <li><strong>DECLARE</strong> hujan <strong>AS</strong> STRING (Jajar Genjang)</li>
+                            <li><strong>Output</strong> "Apakah hujan?" (Jajar Genjang)</li>
+                            <li><strong>Input</strong> jawaban (Jajar Genjang)</li>
+                            <li><strong>Proses:</strong> Jika jawaban adalah TRUE, tampilkan "Bawa payung"; jika FALSE, maka tidak terjadi apa-apa.</li>
+                            <li><strong>Output</strong> hasil (Jajar Genjang)</li>
+                            <li><strong>End</strong> (Terminator)</li>
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/if-tunggal.png" height="50%" width="50%">
+                            <pre><code><span class="keyword">DECLARE</span> hujan <span class="keyword">AS </span>Boolean
+
+<span class="keyword">IF</span> hujan == <span class="keyword">TRUE THEN</span>
+   DISPLAY "Bawa payung"
 <span class="keyword">ENDIF</span></code></pre>
-                            <p class="note">**Contoh:** Jika nilai > 75, tampilkan "Lulus".</p>
                         </div>
                     </details>
 
@@ -783,12 +863,23 @@
                         <summary class="accordion-summary">II. IF-ELSE (Ganda) <i class="fas fa-angle-right arrow"></i></summary>
                         <div class="content sub-accordion-content">
                             <p>Menjalankan satu aksi jika kondisi <span class="code">true</span>, dan aksi lain jika kondisi <span class="code">false</span>.</p>
-                            <pre><code><span class="keyword">IF</span> kondisi <span class="keyword">THEN</span>
-    <span class="comment">// Aksi jika kondisi benar</span>
+                            <p>Urutan logika dalam flowchart:</p>
+                            <li><strong>Start</strong> (Terminator)</li>
+                            <li><strong>DECLARE</strong> hujan <strong>AS</strong> STRING (Jajar Genjang)</li>
+                            <li><strong>Output</strong> "Apakah hujan?" (Jajar Genjang)</li>
+                            <li><strong>Input</strong> jawaban (Jajar Genjang)</li>
+                            <li><strong>Proses:</strong> Jika jawaban adalah TRUE, tampilkan "Bawa payung"; jika FALSE, tampilkan "pakai kacamata".</li>
+                            <li><strong>Output</strong> hasil (Jajar Genjang)</li>
+                            <li><strong>End</strong> (Terminator)</li>
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/if-ganda.png" height="50%" width="50%">
+                            <pre><code><span class="keyword">DECLARE</span> hujan <span class="keyword">AS </span>Boolean
+
+<span class="keyword">IF</span> hujan == <span class="keyword">TRUE THEN</span>
+   DISPLAY "Bawa payung"
 <span class="keyword">ELSE</span>
-    <span class="comment">// Aksi jika kondisi salah</span>
+   DISPLAY "pakai kacamata"
 <span class="keyword">ENDIF</span></code></pre>
-                            <p class="note">**Contoh:** Jika nilai > 75, tampilkan "Lulus", jika tidak, tampilkan "Tidak Lulus".</p>
                         </div>
                     </details>
 
@@ -796,14 +887,30 @@
                         <summary class="accordion-summary">III. IF-ELSE IF-ELSE (Majemuk) <i class="fas fa-angle-right arrow"></i></summary>
                         <div class="content sub-accordion-content">
                             <p>Digunakan untuk menangani lebih dari dua kondisi. Pengecekan dilakukan berurutan.</p>
-                            <pre><code><span class="keyword">IF</span> kondisi1 <span class="keyword">THEN</span>
-    <span class="comment">// Aksi untuk kondisi1</span>
-<span class="keyword">ELSE IF</span> kondisi2 <span class="keyword">THEN</span>
-    <span class="comment">// Aksi untuk kondisi2</span>
+                            <p>Urutan logika dalam flowchart:</p>
+                            <li><strong>Start</strong> (Terminator)</li>
+                            <li><strong>DECLARE</strong> jawaban, jawaban2 <strong>AS</strong> STRING (Jajar Genjang)</li>
+                            <li><strong>Output</strong> "Apakah Bagas ada?" (Jajar Genjang)</li>
+                            <li><strong>Input</strong> jawaban (Jajar Genjang)</li>
+                            <li><strong>Proses:</strong> Jika jawaban adalah TRUE, tampilkan "main dengan Bagas"; jika FALSE, masuk kondisi yg kedua.</li>
+                            <li><strong>Output</strong> "Apakah Budi ada?" (Jajar Genjang)</li>
+                            <li><strong>Input</strong> jawaban2 (Jajar Genjang)</li>
+                            <li><strong>Proses:</strong> Jika jawaban2 adalah TRUE, tampilkan "main dengan Budi"; jika FALSE, maka pulang.</li>
+                            <li><strong>Output</strong> hasil (Jajar Genjang)</li>
+                            <li><strong>End</strong> (Terminator)</li>
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/if-majemuk.png" height="50%" width="50%">
+                            <pre><code><span class="keyword">DECLARE</span> Bagas,Budi <span class="keyword">AS </span>Boolean
+
+<span class="keyword">IF</span> Bagas_<span class="keyword">ADA THEN</span>
+    DISPLAY "main dengan Bagas"
 <span class="keyword">ELSE</span>
-    <span class="comment">// Aksi default jika semua kondisi di atas salah</span>
+    <span class="keyword">IF</span> Budi_<span class="keyword">ADA THEN</span>
+        DISPLAY "main dengan Budi"
+    <span class="keyword">ELSE</span>
+        DISPLAY "pulang"
+    <span class="keyword">ENDIF</span>
 <span class="keyword">ENDIF</span></code></pre>
-                            <p class="note">**Contoh:** Menentukan grade nilai (A, B, C, D, E).</p>
                         </div>
                     </details>
 
