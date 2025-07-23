@@ -20,7 +20,7 @@
 
     <main class="content-container">
         <h2 class="section-title">Daftar Isi</h2>
-        <div class="accordion-wrapper">
+        <section class="accordion-wrapper" aria-label="Daftar Materi Pembelajaran">
 
             <!-- Bagian 1: Algoritma -->
             <details class="accordion">
@@ -170,12 +170,12 @@
                         <summary class="accordion-summary">Simbol-Simbol Dasar Flowchart <i class="fas fa-angle-right arrow"></i></summary>
                         <div class="content sub-accordion-content">
                             <div class="table-responsive">
-                                <table border="1px">
+                                <table border="1" aria-label="Tabel Simbol Flowchart">
                                     <thead>
                                         <tr>
-                                            <th>Simbol</th>
-                                            <th>Nama</th>
-                                            <th>Fungsi</th>
+                                            <th scope="col">Simbol</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Fungsi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -638,7 +638,7 @@
                                         <tr><td>Penjumlahan</td><td><span class="code">+</span></td><td><span class="code">a + b</span></td></tr>
                                         <tr><td>Pengurangan</td><td><span class="code">-</span></td><td><span class="code">a - b</span></td></tr>
                                         <tr><td>Perkalian</td><td><span class="code">*</span></td><td><span class="code">a * b</span></td></tr>
-                                        <tr><td>Pembagian</td><td><span class="code">/</span></td><td><span class="code">a / b</span></td></tr>
+                                        <tr><td>Pembagian</td><td><span class="code">/</td><td><span class="code">a / b</span></td></tr>
                                         <tr><td>Modulus (Sisa Bagi)</td><td><span class="code">%</span></td><td><span class="code">a % b</span></td></tr>
                                     </tbody>
                                 </table>
@@ -850,8 +850,8 @@
                             <li><strong>Output</strong> hasil (Jajar Genjang)</li>
                             <li><strong>End</strong> (Terminator)</li>
                             <p class="note">Visualisasi Flowchart:</p>
-                            <img src="img/if-tunggal.png" height="50%" width="50%">
-                            <pre><code><span class="keyword">DECLARE</span> hujan <span class="keyword">AS </span>Boolean
+                            <img src="img/if-tunggal.png" alt="Flowchart untuk IF Tunggal" height="25%" width="25%">
+                            <pre><code><span class="keyword">DECLARE</span> hujan <span class="keyword">AS</span> Boolean
 
 <span class="keyword">IF</span> hujan == <span class="keyword">TRUE THEN</span>
    DISPLAY "Bawa payung"
@@ -872,7 +872,7 @@
                             <li><strong>Output</strong> hasil (Jajar Genjang)</li>
                             <li><strong>End</strong> (Terminator)</li>
                             <p class="note">Visualisasi Flowchart:</p>
-                            <img src="img/if-ganda.png" height="50%" width="50%">
+                            <img src="img/if-ganda.png" alt="Flowchart untuk IF-ELSE" height="25%" width="25%">
                             <pre><code><span class="keyword">DECLARE</span> hujan <span class="keyword">AS </span>Boolean
 
 <span class="keyword">IF</span> hujan == <span class="keyword">TRUE THEN</span>
@@ -899,7 +899,7 @@
                             <li><strong>Output</strong> hasil (Jajar Genjang)</li>
                             <li><strong>End</strong> (Terminator)</li>
                             <p class="note">Visualisasi Flowchart:</p>
-                            <img src="img/if-majemuk.png" height="50%" width="50%">
+                            <img src="img/if-majemuk.png" alt="Flowchart untuk IF-ELSE IF" height="25%" width="25%">
                             <pre><code><span class="keyword">DECLARE</span> Bagas,Budi <span class="keyword">AS </span>Boolean
 
 <span class="keyword">IF</span> Bagas_<span class="keyword">ADA THEN</span>
@@ -1011,7 +1011,8 @@
 5</code></pre>
                                 </li>
                             </ul>
-
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/perulangan-for.png" alt="Flowchart untuk for" height="25%" width="25%">
                             <h3>2. While Loop</h3>
                             <ul>
                                 <li>**Kapan Digunakan:** Ketika jumlah iterasi belum pasti, perulangan akan terus berjalan selama kondisi <span class="code">true</span>.</li>
@@ -1035,7 +1036,8 @@
 5</code></pre>
                                 </li>
                             </ul>
-
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/while.png" alt="Flowchart untuk while" height="25%" width="25%">
                             <h3>3. Do While Loop</h3>
                             <ul>
                                 <li>**Kapan Digunakan:** Mirip <span class="code">WHILE</span>, tetapi blok kode akan dieksekusi minimal satu kali, baru kemudian kondisi dicek.</li>
@@ -1053,8 +1055,342 @@
 <span class="keyword">WHILE</span> i < 5</code></pre>
                                     <p>Output:</p>
                                     <pre><code>Halo</code></pre>
-                                    <p class="note">Meskipun <span class="code">i < 5</span> awalnya <span class="code">false</span>, "Halo" tetap dicetak sekali.</p>
+                                    <p class="note">Perbedaannya dengan while loop:</p>
+                                    <ol>
+                                        <li>while → kondisi dicek di awal</li>
+                                        <li>do while → kondisi dicek di akhir → jadi pasti dijalankan sekali, walau kondisi awalnya salah.</li>
+                                    </ol>
                                 </li>
+                            </ul>
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/Do.png" alt="Flowchart untuk Do" height="25%" width="25%">
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 10: Konsep Array dalam Pemrograman -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-boxes icon-prefix"></i>Konsep Array dalam Pemrograman <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Pengertian <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Array adalah tipe data yang digunakan untuk menyimpan kumpulan elemen (nilai atau variabel) dalam satu variabel tunggal, di mana setiap elemen memiliki index (posisi).</p>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Kenapa Menggunakan Array? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <h3>1. Manajemen Memori</h3>
+                            <ul>
+                                <li>Sebelum array:
+<pre><code>binatang1 = "ayam"
+binatang2 = "sapi"
+binatang3 = "kambing"</code></pre></li>
+                                <li>Dengan array:
+<pre><code>binatang = ["ayam", "sapi", "kambing"]</code></pre></li>
+                                <li>✅ Lebih hemat, efisien, dan mudah dikelola.</li>
+                            </ul>
+                            <h3>2. Mempermudah Pengelolaan Data</h3>
+                            <ul>
+                                <li>Anggap array seperti lemari dengan banyak laci. Tiap laci punya nomor (index), dan isinya bisa kamu ambil atau ganti dengan cepat.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Sifat-Sifat Array <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <h3>1. ✅ Variabel Jamak dengan Nama yang Sama</h3>
+                            <ul>
+                                <li>Semua elemen diakses lewat satu nama, dibedakan lewat indeks.</li>
+                                <li>📌 Contoh (java):
+<pre><code>int[] angka = {10, 20, 30};
+System.out.println(angka[0]);  <span class="comment">// Output: 10</span>
+System.out.println(angka[1]);  <span class="comment">// Output: 20</span></code></pre></li>
+                            </ul>
+                            <h3>2. 🔑 Pasangan Key dan Value (Key-Value Pair)</h3>
+                            <ul>
+                                <li>Di array biasa (list), index adalah angka urut otomatis.</li>
+                                <li>Dalam array yang berbentuk dictionary (Python), key bisa ditentukan sendiri.</li>
+                                <li>📌 Contoh:
+<pre><code>hewan = {"a": "ayam", "s": "sapi", "k": "kambing"}
+print(hewan["s"])  <span class="comment"># Output: sapi</span></code></pre></li>
+                            </ul>
+                            <h3>3. 🔄 Bisa Menyimpan Tipe Data Berbeda (di bahasa tertentu seperti Python)</h3>
+                            <ul>
+                                <li>📌 Contoh:
+<pre><code>campuran = ["apel", 123, True, 45.6]
+print(campuran[2])  <span class="comment"># Output: True</span></code></pre>
+                                <li>Di bahasa seperti Java, C, C++, semua elemen array harus satu jenis (homogen).</li>
+                                <li>📌 Contoh java:
+<pre><code>Object[] campuran = {"apel", 123, true, 45.6};
+System.out.println(campuran[2]);  <span class="comment">// Output: True</span></code></pre>
+                            </ul>
+                            <h3>4. 📚 Array Bersarang (Array di dalam Array)</h3>
+                            <ul>
+                                <li>Array yang elemen-elemennya juga berupa array.</li>
+                                <li>📌 Contoh:
+<pre><code>data = [
+  ["apel", "jeruk"],
+  ["ayam", "bebek"]
+]
+print(data[1][0])  <span class="comment"># Output: ayam</span></code></pre></li>
+                                <li>📌 Contoh java:
+<pre><code>String[][] data = {
+  {"apel", "jeruk"},
+  {"ayam", "bebek"}
+};
+System.out.println(data[1][0]);  <span class="comment">// Output: ayam</span></code></pre></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Contoh Flowchart Array Sederhana <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tujuan: Menyimpan dan menampilkan isi array</p>
+<pre><code>Start
+↓
+Deklarasi array[3]
+↓
+Input array[0]
+Input array[1]
+Input array[2]
+↓
+Output array[0]
+Output array[1]
+Output array[2]
+↓
+End</code></pre>
+                        </div>
+                        <summary class="accordion-summary">Contoh Flowchart Array dengan loop <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p class="note">Visualisasi Flowchart:</p>
+                            <img src="img/array.png" alt="Flowchart untuk Do" height="25%" width="25%"> 
+                            <p>Tujuan: Menyimpan dan menampilkan isi array</p>
+<pre><code>Start
+↓
+Deklarasi array[3] As String
+↓
+Deklarasi i As Integer
+↓
+i = 0
+↓
+[Loop Input]
+Apakah i < 3?
+→ Ya → Input array[i], i = i + 1 → Kembali ke [Loop Input]
+→ Tidak → Lanjut ke [Loop Output]
+↓
+i = 0
+↓
+[Loop Output]
+Apakah i < 3?
+ → Ya → Output array[i], i = i + 1 → Kembali ke [Loop Output]
+→ Tidak → End</code></pre>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Pseudocode Array <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+<pre><code><span class="keyword">DECLARE</span> buah[3] <span class="keyword">AS</span> STRING
+
+<span class="keyword">FOR</span> i = 0 <span class="keyword">TO</span> 2
+    <span class="keyword">INPUT</span> buah[i]
+<span class="keyword">END FOR</span>
+
+<span class="keyword">FOR</span> i = 0 <span class="keyword">TO</span> 2
+    <span class="keyword">DISPLAY</span> buah[i]
+<span class="keyword">END FOR</span></code></pre>
+                        </div>
+                        <p class="note">code dalam java</p>
+                        <img src="img/code.png" alt="java" height="25%" width="25%">                        
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Cara Membuat Array Bersarang <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>📌 Contoh Python:</p>
+<pre><code>siswa = [
+    ["Adit", 90],
+    ["Budi", 85],
+    ["Cici", 95]
+]
+
+print(siswa[0][0])  <span class="comment"># Output: Adit</span>
+print(siswa[2][1])  <span class="comment"># Output: 95</span></code></pre>
+                            <p>📌 Contoh java:</p>
+<pre><code>   String[] nama = {"Adit", "Budi", "Cici"};
+    int[] nilai = {90, 85, 95};
+    
+System.out.println(nama[0]);  <span class="comment">// Output: Adit</span>
+System.out.println(nilai[2]);  <span class="comment">// Output: 95</span></code></pre>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <!-- Bagian 11: Konsep Function dalam Pemrograman -->
+            <details class="accordion">
+                <summary class="accordion-summary">
+                    <i class="fas fa-function icon-prefix"></i>Konsep Function dalam Pemrograman <i class="fas fa-chevron-right arrow"></i>
+                </summary>
+                <div class="content accordion-content">
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Apa itu Function? <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Function adalah program kecil atau blok kode terpisah dalam program utama yang bisa dipanggil kapan saja. Function dapat memiliki input (parameter) dan dapat mengembalikan output (return value).</p>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Analogi Function <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Function itu seperti mesin atau alat:</p>
+                            <ul>
+                                <li>Kita masukkan bahan (input),</li>
+                                <li>Mesin memprosesnya (logic),</li>
+                                <li>Lalu menghasilkan sesuatu (output).</li>
+                            </ul>
+                            <p>Contoh:</p>
+                            <ul>
+                                <li>Mesin kopi:
+                                    <ul>
+                                        <li>Input: air + bubuk kopi</li>
+                                        <li>Output: kopi panas</li>
+                                    </ul>
+                                </li>
+                                <li>Function:
+<pre><code><span class="keyword">def</span> tambah(a, b):
+    <span class="keyword">return</span> a + b</code></pre></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Karakteristik Function <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ol>
+                                <li>🔹 Program kecil yang berdiri sendiri dalam program utama.</li>
+                                <li>🔹 Bisa menerima input (argumen/parameter).</li>
+                                <li>🔹 Bisa menghasilkan output (return).</li>
+                                <li>🔹 Output function bisa menjadi input untuk function lain.</li>
+                                <li>🔹 Wajib dibuat dulu sebelum dipanggil.</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Manfaat Function <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <ol>
+                                <li>✅ Reusability – Bisa dipakai berulang-ulang di bagian lain program.</li>
+                                <li>✅ Manajemen Memori – Fungsi dipanggil hanya saat dibutuhkan.</li>
+                                <li>✅ Efisiensi Kode – Tidak perlu menulis kode yang sama berulang-ulang.</li>
+                                <li>✅ Mudah Dipahami – Kode terstruktur dan jelas bagi programmer lain.</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Kategori Function <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <h3>1. Built-in Function (fungsi bawaan)</h3>
+                            <ul>
+                                <li>Sudah disediakan oleh bahasa pemrograman.</li>
+                                <li>Tinggal dipakai.</li>
+                                <li>📌 Contoh (Python):
+<pre><code>print("Halo")
+len("abc")  <span class="comment"># menghitung jumlah karakter string, hasil: 3</span></code></pre></li>
+                                <li>📌 Contoh (Java):
+<pre><code>String teks = "Halo";
+System.out.println(teks.length());  <span class="comment">// menghitung jumlah karakter string, hasil: 3</span></code></pre></li>
+                            </ul>
+                            <h3>2. User-Defined Function (fungsi buatan sendiri)</h3>
+                            <ul>
+                                <li>Dibuat oleh programmer sendiri sesuai kebutuhan.</li>
+                                <li>📌 Contoh (Python):
+<pre><code><span class="keyword">def</span> luas_persegi(sisi):
+    <span class="keyword">return</span> sisi * sisi
+
+<span class="comment"># Pemanggilan fungsi</span>
+hasil = luas_persegi(5)
+print("Luas persegi:", hasil)  <span class="comment"># Output: 25</span></code></pre></li>
+                                <li>📌 Contoh (Java):
+<pre><code><span class="keyword">public class</span> FungsiLuasPersegi {
+    <span class="comment">// Fungsi user-defined</span>
+    <span class="keyword">public static int</span> luasPersegi(int sisi) {
+        <span class="keyword">return</span> sisi * sisi;
+        }
+        <span class="keyword">public static void</span> main(String[] args) {
+            <span class="comment">// Memanggil fungsi dan menyimpan hasilnya</span>
+            int hasil = luasPersegi(5);
+            <span class="comment">// Menampilkan hasil</span>
+            System.out.println("Luas persegi: " + hasil);
+print("Luas persegi:", hasil)  <span class="comment">  // Output: 25</span>
+    }
+}
+</code></pre></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Pseudocode Membuat Function <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+<pre><code><span class="keyword">FUNCTION</span> namaFunction(parameter1, parameter2)
+    <span class="keyword">DEKLARASI</span> variabel
+    <span class="keyword">LAKUKAN</span> proses
+    <span class="keyword">RETURN</span> nilai
+<span class="keyword">END FUNCTION</span>
+
+<span class="keyword">PROGRAM</span> UTAMA
+    <span class="keyword">PANGGIL</span> namaFunction(dengan_argumen)
+<span class="keyword">END PROGRAM</span></code></pre>
+                            <p>📌 Contoh Pseudocode:</p>
+<pre><code><span class="keyword">FUNCTION</span> Tambah(a, b)
+    <span class="keyword">RETURN</span> a + b
+<span class="keyword">END FUNCTION</span>
+
+<span class="keyword">PROGRAM</span> UTAMA
+    HASIL ← Tambah(4, 5)
+    <span class="keyword">DISPLAY</span> HASIL
+<span class="keyword">END PROGRAM</span></code></pre>
+                        </div>
+                    </details>
+                    <details class="sub-accordion">
+                        <summary class="accordion-summary">Flowchart Function Sederhana <i class="fas fa-angle-right arrow"></i></summary>
+                        <div class="content sub-accordion-content">
+                            <p>Tujuan: Membuat fungsi untuk menjumlahkan 2 angka</p>
+<pre><code>+--------------------+
+|    Start           |
++--------------------+
+         |
+         v
++--------------------+
+| Input A, B         |
++--------------------+
+         |
+         v
++--------------------+
+| Call Function      |
+|  Jumlahkan(A, B)   |
++--------------------+
+         |
+         v
++--------------------+
+| Output Hasil       |
++--------------------+
+         |
+         v
++--------------------+
+|       End          |
++--------------------+</code></pre>
+<p class="note">Visualisasi Flowchart:</p>
+<ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px; align-items: center;">
+    <li><img src="img/function.png" alt="java" style="width: 100px; height: auto;"></li>
+    <li><img src="img/luaspersegi.png" alt="java" style="width: 100px; height: auto;"></li>
+  </ul>
+  
+                            <p>📌 Di dalam function Jumlahkan(A, B):</p>
+                            <ul>
+                                <li>Proses: C = A + B</li>
+                                <li>Return: C</li>
                             </ul>
                         </div>
                     </details>
