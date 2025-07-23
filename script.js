@@ -57,3 +57,34 @@ document.querySelectorAll('.sub-accordion > summary').forEach((summary) => {
         // The CSS `details[open] .content { display: block; }` will manage this.
     });
 });
+        // PWA related code (tetap dipertahankan)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+              navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(err => {
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+          }
+          let deferredPrompt;
+  
+          window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+          
+            const installBtn = document.getElementById('installBtn');
+            installBtn.style.display = 'block';
+          
+            installBtn.addEventListener('click', () => {
+              deferredPrompt.prompt();
+              deferredPrompt.userChoice.then(choice => {
+                if (choice.outcome === 'accepted') {
+                  console.log('PWA installed');
+                }
+                deferredPrompt = null;
+              });
+            });
+          });
