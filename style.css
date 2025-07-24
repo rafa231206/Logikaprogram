@@ -354,3 +354,18 @@ table{
 th, td {
     padding: 10px; 
 }
+/* Add this to your style.css */
+.word-link-section {
+    margin-top: 1rem; /* Add some space above the link */
+}
+
+.word-download-link {
+    color: #a9d18e; /* A distinct color, e.g., a light green */
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.word-download-link:hover {
+    color: #c6e6b8; /* Lighter green on hover */
+}
