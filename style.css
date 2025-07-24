@@ -351,6 +351,9 @@ table{
     border: 1px solid ;
     border-collapse: collapse; 
 }
+.table-responsive{
+    overflow-x: auto
+}
 th, td {
     padding: 10px; 
 }
